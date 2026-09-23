@@ -1,0 +1,17 @@
+{
+  "n_samples": 256,
+  "metrics": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "tool_0_f1": 1.0,
+    "tool_1_f1": 1.0,
+    "tool_2_f1": 1.0,
+    "tool_3_f1": 1.0,
+    "tool_4_f1": 1.0
+  },
+  "baseline_metrics": {
+    "accuracy": 0.8846153846153846,
+    "macro_f1": 0.8891617933723197
+  },
+  "explanation": "Learned router (TF-IDF 1-2gram + LogisticRegression liblinear): acc=1.0000, macro-F1=1.0000. Keyword baseline (first-match over 5 ordered tool lists): acc=0.8846, macro-F1=0.8892. Stratified 80/20 split: train=204, test=52. Data is i.i.d. synthetic (no temporal sequence); stratification guarantees each tool class appears in both folds, preventing class-imbalance leakage. Per-tool F1 values expose individual routing blind spots of the learned classifier."
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "tool-router-eval",
+  "title": "Deterministic Tool-Router Evaluation for Synthetic Agent Tasks",
+  "description": "Evaluates a TF-IDF + Logistic Regression tool router against a keyword-overlap baseline on 5 synthetic agent tools, measuring routing accuracy and macro F1.",
+  "novelty": "Models the specific agent-to-tool routing decision rather than generic text classification; compares a learned classifier against a deterministic keyword-matching baseline that mimics naive prompt-based routing, and reports per-tool F1 to expose routing blind spots.",
+  "method": "Algorithm: TF-IDF (ngram 1-2) + Logistic Regression (liblinear) on a stratified 80/20 train/test split. Baseline: deterministic first-keyword-match router using per-tool keyword lists. Metrics: accuracy (higher=better) and macro F1 (higher=better) on the held-out test set. Data is i.i.d. synthetic so no temporal leakage; stratification ensures balanced class representation in both splits.",
+  "dependencies": [
+    "numpy",
+    "scikit-learn"
+  ],
+  "acceptance_tests": [
+    "TF-IDF + Logistic Regression routing accuracy on held-out test samples exceeds 0.85",
+    "Macro F1 of the learned router strictly exceeds macro F1 of the keyword-overlap baseline on the same test split",
+    "make_dataset raises ValueError for n_samples=31 and returns different X arrays for different seeds"
+  ]
+}

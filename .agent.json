@@ -1,0 +1,14 @@
+{
+  "generator": "qwen-project-factory-v1",
+  "status": "validated",
+  "date": "2026-09-23",
+  "slug": "tool-router-eval",
+  "description": "Evaluates a TF-IDF + Logistic Regression tool router against a keyword-overlap baseline on 5 synthetic agent tools, measuring routing accuracy and macro F1.",
+  "method": "Algorithm: TF-IDF (ngram 1-2) + Logistic Regression (liblinear) on a stratified 80/20 train/test split. Baseline: deterministic first-keyword-match router using per-tool keyword lists. Metrics: accuracy (higher=better) and macro F1 (higher=better) on the held-out test set. Data is i.i.d. synthetic so no temporal leakage; stratification ensures balanced class representation in both splits.",
+  "category": "Generative AI agent skills: deterministic tools, routing and tool-use evaluation",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "precision": "bfloat16",
+  "thinking": true,
+  "bundle_sha256": "84802c082517a0ee014ef5d8106f00f6d9fa6610cd347c4ff48f745ffeb914b5"
+}
